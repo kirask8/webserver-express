@@ -4,12 +4,12 @@ const hbs = require('hbs');
 require('./hbs/helpers/helpers');
 
 //Puerto personalizado
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 // //Use, librerias, etc...
-// app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
-// app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
-// app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use(express.static(__dirname + '/public'));
 
 //Express HBS Engine
